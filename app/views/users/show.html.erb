@@ -1,0 +1,26 @@
+<div class = "container title-lg" >
+  <p>Профиль пользователя: <%= @user.name %></p>
+  <p class="text-sm question-footer">Зарегистрировался <%=l(@user.created_at, format: :short) %></p>
+  <%= render 'questions/form', user: @user, question: @user.questions.build %>
+</div>
+
+ <div class = "mt-sm container" >
+  <div class = "container mt-sm" >
+   <h2 class = "title-lg">
+     <%= @questions.count %>
+     <%= inclination(@questions.count, 'вопрос','вопроса','вопросов')%>    
+   </h2>
+  </div>
+
+  <% @questions.each do |question| %>
+   <%= render 'questions/question', user: @user, question: question %>
+  <% end %>
+</div>
+
+
+<div>
+  <%= link_to "Edit this user", edit_user_path(@user) %> |
+  <%= link_to "Back to users", users_path %>
+
+  <%= button_to "Destroy this user", @user, method: :delete %>
+</div>

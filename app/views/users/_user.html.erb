@@ -1,0 +1,13 @@
+<div id="<%= dom_id user %>">
+  <div class = "mb-sm" >
+    <%= link_to user.nickname, user_path(user) %>
+  </div>
+  
+  <div class = "text-sm question-footer" >
+    <div class="text-grey" >
+      <%= user.name %>
+       с нами уже с <%=l(user.created_at, format: :short) %>
+    </div>
+  </div>
+</div>
+

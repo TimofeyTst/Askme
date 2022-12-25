@@ -1,0 +1,32 @@
+body {
+  background-color: #12547D;
+  display: flex;
+  justify-content: center;
+}
+
+.wrapper {
+  width: 100%;
+  max-width: 800px;
+  margin: 40px;
+}
+
+.container {
+  background-color: whitesmoke;
+}
+
+.container, .navbar {
+  padding: 20px;
+}
+
+.navbar {
+  align-items: center;
+  background-color: #0072BB;
+  color: whitesmoke;
+  display: flex;
+  justify-content: space-between;
+}
+
+.navbar a {
+  color: whitesmoke;
+  text-decoration: none;
+}
