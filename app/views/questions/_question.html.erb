@@ -1,7 +1,8 @@
-  <div class = "%mb-sm" >
+<div id="<%= dom_id question %>" class="question">
+  <div class = "mb-sm d-flex-start">
     <%= question.body %>
     <% if question.anwser.nil? && question.user == current_user %>
-      <%= link_to "Reply", nil, remote: true, class: "button button-main",
+      <%= link_to inline_svg_tag("reply.svg", class: 'svg-picture reply'), nil, remote: true,
         data: { controller: "anwser",
                 action: "anwser#toggleForm",
                 anwser_form_param: "anwser_form_#{question.id}" } %>
@@ -16,11 +17,12 @@
 
   <%= render 'anwsers/anwser', question: question, user: user %>
 
-<div id="anwser_form_<%= question.id %>" class="d-none">
-<% if question.anwser.nil? %>
-  <div class="container anwser_form">
-    <%= render 'anwsers/form', question: question %> 
+  <div id="anwser_form_<%= question.id %>" class="d-none">
+    <% if question.anwser.nil? %>
+      <div class="anwser_form">
+        <%= render 'anwsers/form', question: question %> 
+      </div>
+    <% end %>  
   </div>
-<% end %>  
 </div>
 

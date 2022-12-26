@@ -1,11 +1,13 @@
 Rails.application.routes.draw do
-  root "users#index"
+  scope '(:locale)', locale: /#{I18n.available_locales.join("|")}/ do
+    root 'users#index'
 
-  resources :users do
-    resources :questions, only: %i[create destroy] do
-      resource :anwser, only: %i[create destroy]
+    resources :users do
+      resources :questions, only: %i[create destroy] do
+        resource :anwser, only: %i[create destroy]
+      end
     end
-  end
 
-  resource :session, only: %i[new create destroy]
+    resource :session, only: %i[new create destroy]
+  end
 end

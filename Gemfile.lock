@@ -87,6 +87,9 @@ GEM
     importmap-rails (1.1.5)
       actionpack (>= 6.0.0)
       railties (>= 6.0.0)
+    inline_svg (1.8.0)
+      activesupport (>= 3.0)
+      nokogiri (>= 1.6)
     io-console (0.6.0)
     irb (1.6.2)
       reline (>= 0.3.0)
@@ -143,6 +146,9 @@ GEM
       nokogiri (>= 1.6)
     rails-html-sanitizer (1.4.4)
       loofah (~> 2.19, >= 2.19.1)
+    rails-i18n (7.0.6)
+      i18n (>= 0.7, < 2)
+      railties (>= 6.0.0, < 8)
     railties (7.0.4)
       actionpack (= 7.0.4)
       activesupport (= 7.0.4)
@@ -191,9 +197,11 @@ DEPENDENCIES
   debug
   font-awesome-rails
   importmap-rails
+  inline_svg
   jbuilder
   puma (~> 5.0)
   rails (~> 7.0.4)
+  rails-i18n
   redis (~> 4.0)
   sprockets-rails
   sqlite3 (~> 1.4)

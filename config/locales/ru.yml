@@ -1,0 +1,8 @@
+ru:
+  hello: "Hello world"
+  Sign up: 'Регистрация'
+  question:
+    one: "%{count} вопрос"
+    few: "%{count} вопроса"  
+    many: "%{count} вопросов"  
+    other: "%{count} вопросов" 

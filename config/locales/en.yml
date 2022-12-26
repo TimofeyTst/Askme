@@ -31,3 +31,9 @@
 
 en:
   hello: "Hello world"
+  Sign up: 'Sign up'
+  question:
+    one: "%{count} question"
+    few: "%{count} questions"  
+    many: "%{count} questions"  
+    other: "%{count} questions"  

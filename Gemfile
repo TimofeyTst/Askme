@@ -66,3 +66,8 @@ end
 
 gem "font-awesome-rails"
 
+# For internationalization
+gem 'rails-i18n'
+
+# For svg
+gem 'inline_svg'

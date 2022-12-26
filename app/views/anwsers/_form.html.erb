@@ -1,7 +1,10 @@
-<%= form_with url: user_question_anwser_path(question_id: question.id, user_id: question.user.id) do |form| %>
+<div class="border_form">
+  <%= form_with url: user_question_anwser_path(question_id: question.id, user_id: question.user.id) do |form| %>
 
-  <p><%= form.label :body, 'Текст ответа:'%></p>
-  <p><%= form.text_field :body, rows: 5, class: 'form-text-area' %></p>
-  <p class="mt"><%= form.submit 'Ответить', class: 'button button-main' %></p>
+    <p><%= form.label :body, 'Текст ответа:'%></p>
+    <p><%= form.text_field :body, rows: 5, class: 'form-text-area' %></p>
+    <p class="mt"><%= form.submit 'Ответить', class: 'button button-main' %></p>
 
-<% end %>
+  <% end %>
+</div>
+

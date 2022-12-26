@@ -8,14 +8,16 @@
 </div>
 
  <div class = "mt-sm container" >
-  <div class = "container mt-sm" >
-   <h2 class = "title-lg">
-     <%= @questions.count %>
-     <%= inclination(@questions.count, 'вопрос','вопроса','вопросов')%>    
-   </h2>
+  <div class = "mt-sm" >
+    <div class = "title-lg">
+      <%= (t "question", count: @questions.count) %>
+      <%= link_to "Ask", nil, remote: true, class: "button button-main",
+           data: { controller: "question",
+                   action: "question#toggleForm" } %>
+    </div>
   </div>
 
-  <div class="container question_form">
+  <div id="question_form" class="d-none">
     <%= render 'questions/form', user: @user, question: @user.questions.build %>
   </div>
 

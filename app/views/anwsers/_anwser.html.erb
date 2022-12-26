@@ -1,9 +1,9 @@
 <% if question.anwser.presence %>
-    <div class="container">
-        <div class = "%mb-sm" >
+    <div class="anwser">
+        <div class = "mb-sm d-space-between" >
           <%= question.anwser.body %>
               <% if question.user == current_user %>
-                <%= button_to "Delete Anwser", user_question_anwser_path(user_id: question.user.id, question_id: question.id), method: :delete, class: "button button-main" %>
+                <%= button_to inline_svg_tag("delete.svg", class: 'svg-picture delete'), user_question_anwser_path(user_id: question.user.id, question_id: question.id), method: :delete, class: "button delete" %>
               <% end %>
         </div>
 
