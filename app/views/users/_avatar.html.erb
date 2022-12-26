@@ -1,0 +1,13 @@
+<div class="container">
+    <div class="avatar">
+    <% if user.avatar.attached? %>
+            <%= image_tag user.avatar, class: avatar_class %>
+    <% else %>
+            <% if user == current_user %>
+                <%= link_to (image_tag 'default_avatar.jpg', class: avatar_class), edit_user_path(user) %>
+            <% else %>
+                <%= image_tag 'default_avatar.jpg', class: avatar_class %>
+            <% end %>
+    <% end %>
+    </div>
+</div>

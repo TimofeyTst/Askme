@@ -1,5 +1,5 @@
   <div class = "mt" >
-    <%= form_with model: user do |form| %>
+    <%= form_with model: user, method: :put do |form| %>
       <% if user.errors.any? %>
         <div style="color: red">
           <ul>
@@ -32,7 +32,7 @@
          </div>
       </div>
 
-      <p class = 'mt-lg' ><%= form.submit 'Подтвердить', class: 'button button-main'%></p>
+      <p class = 'mt-lg' ><%= form.submit 'Обновить', class: 'button button-main'%></p>
     <% end %>
 
   </div>

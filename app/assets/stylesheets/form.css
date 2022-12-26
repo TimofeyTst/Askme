@@ -17,3 +17,24 @@
 .d-none{
   display: none;
 }
+
+.avatar-mini {
+  border-radius: 50%;
+  height: 5vw;
+  width: 5vw;
+}
+.avatar-big {
+  border-radius: 50%;
+  height: 8vw;
+  width: 8vw;
+}
+
+.navbar .line{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+.navbar .line .container{
+  background: transparent;
+}

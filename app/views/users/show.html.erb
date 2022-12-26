@@ -1,6 +1,10 @@
 <div class = "container title-lg" >
   <p>Профиль пользователя: <%= @user.name %></p>
+  <%= render 'avatar', user: @user, avatar_class: "avatar-big" %>
   <p class="text-sm question-footer">Зарегистрировался <%=l(@user.created_at, format: :short) %></p>
+  <% if current_user == @user %>
+    <%= render 'users/buttons' %>
+  <% end %>
 </div>
 
  <div class = "mt-sm container" >
@@ -24,10 +28,3 @@
 
 </div>
 
-
-<div>
-  <%= link_to "Edit this user", edit_user_path(@user) %> |
-  <%= link_to "Back to users", users_path %>
-
-  <%= button_to "Destroy this user", @user, method: :delete %>
-</div>
