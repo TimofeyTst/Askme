@@ -6,3 +6,6 @@ ru:
     few: "%{count} вопроса"  
     many: "%{count} вопросов"  
     other: "%{count} вопросов" 
+
+  Ask: "Спроси меня"
+  Registred at: "Зарегистрирован"

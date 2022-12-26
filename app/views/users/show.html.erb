@@ -1,7 +1,7 @@
 <div class = "container title-lg" >
   <p>Профиль пользователя: <%= @user.name %></p>
   <%= render 'avatar', user: @user, avatar_class: "avatar-big" %>
-  <p class="text-sm question-footer">Зарегистрировался <%=l(@user.created_at, format: :short) %></p>
+  <p class="text-sm question-footer"><%= (t "Registred at") %> <%=l(@user.created_at, format: :short) %></p>
   <% if current_user == @user %>
     <%= render 'users/buttons' %>
   <% end %>
@@ -11,7 +11,7 @@
   <div class = "mt-sm" >
     <div class = "title-lg">
       <%= (t "question", count: @questions.count) %>
-      <%= link_to "Ask", nil, remote: true, class: "button button-main",
+      <%= link_to (t "Ask"), nil, remote: true, class: "button button-main",
            data: { controller: "question",
                    action: "question#toggleForm" } %>
     </div>

@@ -1,6 +1,10 @@
 <div id="<%= dom_id user %>">
-  <div class = "mb-sm" >
-    <%= link_to user.nickname, user_path(user) %>
+  <div class = "mb-sm d-flex-start" >
+    <div class="nickname">
+      <%= link_to user.nickname, user_path(user) %>
+    </div>
+
+    <%= render 'layouts/avatar', user: user, avatar_class: "avatar-mini" %>
   </div>
   
   <div class = "text-sm question-footer" >

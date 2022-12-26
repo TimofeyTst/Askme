@@ -17,6 +17,11 @@
 .d-none{
   display: none;
 }
+.avatar-navbar {
+  border-radius: 50%;
+  height: 3vw;
+  width: 3vw;
+}
 
 .avatar-mini {
   border-radius: 50%;
@@ -48,4 +53,8 @@
 }
 .anwser {
   background: rgba(71, 120, 255, 0.2);
+}
+
+.nickname {
+  margin-right: 10px;
 }

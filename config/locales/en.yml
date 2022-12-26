@@ -37,3 +37,7 @@ en:
     few: "%{count} questions"  
     many: "%{count} questions"  
     other: "%{count} questions"  
+  
+  Ask: "Ask"
+  Registred at: "Registred at"
+
