@@ -9,7 +9,7 @@ class UsersController < ApplicationController
 
   # GET /users/1 or /users/1.json
   def show
-    @questions = @user.questions
+    @questions = @user.questions.order(created_at: :desc)
   end
 
   # GET /users/new
@@ -19,7 +19,7 @@ class UsersController < ApplicationController
 
   # GET /users/1/edit
   def edit
-    redirect_to user_path(@user), notice: 'ПОШЕЛ НАХУЙ' unless have_permission?
+    redirect_to user_path(@user), notice: 'Ypu dont have permissions' unless have_permission?
   end
 
   # POST /users or /users.json

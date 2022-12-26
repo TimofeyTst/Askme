@@ -1,3 +1,4 @@
 class Question < ApplicationRecord
   belongs_to :user
+  has_one :anwser
 end

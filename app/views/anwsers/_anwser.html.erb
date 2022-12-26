@@ -1,0 +1,20 @@
+<% if question.anwser.presence %>
+    <div class="container">
+        <div class = "%mb-sm" >
+          <%= question.anwser.body %>
+        </div>
+
+        <div class = "text-sm question-footer" >
+          <div class="text-grey" >
+            <%= question.anwser.created_at %>
+          </div>
+        </div>
+    </div>
+<% elsif question.presence %>
+  <div class="container anwser_form">
+    <%= render 'anwsers/form', question: question %> 
+  </div>
+<% end %>
+
+
+

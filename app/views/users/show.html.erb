@@ -1,7 +1,6 @@
 <div class = "container title-lg" >
   <p>Профиль пользователя: <%= @user.name %></p>
   <p class="text-sm question-footer">Зарегистрировался <%=l(@user.created_at, format: :short) %></p>
-  <%= render 'questions/form', user: @user, question: @user.questions.build %>
 </div>
 
  <div class = "mt-sm container" >
@@ -12,9 +11,17 @@
    </h2>
   </div>
 
-  <% @questions.each do |question| %>
-   <%= render 'questions/question', user: @user, question: question %>
-  <% end %>
+  <div class="container question_form">
+    <%= render 'questions/form', user: @user, question: @user.questions.build %>
+  </div>
+
+  <div id="questions">
+    <% @questions.each do |question| %>
+        <%= render 'questions/question', user: @user, question: question %>
+    <% end %>
+  </div>
+
+
 </div>
 
 
