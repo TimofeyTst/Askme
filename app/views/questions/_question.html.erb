@@ -1,5 +1,11 @@
   <div class = "%mb-sm" >
     <%= question.body %>
+    <% if question.anwser.nil? && question.user == current_user %>
+      <%= link_to "Reply", nil, remote: true, class: "button button-main",
+        data: { controller: "anwser",
+                action: "anwser#toggleForm",
+                anwser_form_param: "anwser_form_#{question.id}" } %>
+    <% end %>    
   </div>
 
   <div class = "text-sm question-footer" >
@@ -9,4 +15,12 @@
   </div>
 
   <%= render 'anwsers/anwser', question: question, user: user %>
+
+<div id="anwser_form_<%= question.id %>" class="d-none">
+<% if question.anwser.nil? %>
+  <div class="container anwser_form">
+    <%= render 'anwsers/form', question: question %> 
+  </div>
+<% end %>  
+</div>
 

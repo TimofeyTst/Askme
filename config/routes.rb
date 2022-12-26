@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   resources :users do
     resources :questions, only: %i[create destroy] do
-      resource :anwser, only: :create
+      resource :anwser, only: %i[create destroy]
     end
   end
 

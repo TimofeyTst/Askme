@@ -2,6 +2,9 @@
     <div class="container">
         <div class = "%mb-sm" >
           <%= question.anwser.body %>
+              <% if question.user == current_user %>
+                <%= button_to "Delete Anwser", user_question_anwser_path(user_id: question.user.id, question_id: question.id), method: :delete, class: "button button-main" %>
+              <% end %>
         </div>
 
         <div class = "text-sm question-footer" >
@@ -10,10 +13,6 @@
           </div>
         </div>
     </div>
-<% elsif question.presence %>
-  <div class="container anwser_form">
-    <%= render 'anwsers/form', question: question %> 
-  </div>
 <% end %>
 
 
